@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: fraccion.rb~ [RDoc Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../Practica11/Gemfile.html">Gemfile</a></li>
+				
+					<li class="file"><a href="../../Practica11/Gemfile_lock.html">Gemfile.lock</a></li>
+				
+					<li class="file"><a href="../../Practica11/Guardfile.html">Guardfile</a></li>
+				
+					<li class="file"><a href="../../Practica11/LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../../Practica11/README_md.html">README.md</a></li>
+				
+					<li class="file"><a href="../../Practica11/Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../../Practica11/Rakefile~.html">Rakefile~</a></li>
+				
+					<li class="file"><a href="../../Practica11/lib/fraccion_rb~.html">fraccion.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/lib/matriz_rb~.html">matriz.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/lib/matriz/version_rb~.html">version.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/matriz_gemspec.html">matriz.gemspec</a></li>
+				
+					<li class="file"><a href="../../Practica11/spec/rspec_p8_spec_rb~.html">rspec_p8_spec.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/test/test_matrices_rb~.html">test_matrices.rb~</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Fraccion.html">Fraccion</a></li>
+				
+					<li><a href="../../Matriz.html">Matriz</a></li>
+				
+					<li><a href="../../MatrizDensa.html">MatrizDensa</a></li>
+				
+					<li><a href="../../MatrizDispersa.html">MatrizDispersa</a></li>
+				
+					<li><a href="../../Test_Matriz.html">Test_Matriz</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<p>
+require &#8220;./lib/gcd.rb&#8220; require
+&#8220;./lib/comparable.rb&#8220;
+</p>
+<p>
+class <a href="../../Fraccion.html">Fraccion</a>
+</p>
+<pre>
+        include Comparable
+
+        attr_accessor :n, :d
+
+        def initialize(n, d)
+                @n = n
+                @d = d
+        end
+
+        def num
+                @n
+        end
+
+        def denom
+                @d
+        end
+
+        def reduce
+                a = @n
+                b = @d
+
+                if a &lt; b
+                        x = a
+                else
+                        x = b
+                end
+
+                reducida = false
+
+        while (x&gt;1 &amp;&amp; !reducida) do
+                if (a%x == 0) &amp;&amp; (b%x == 0)
+                        a = a/x
+                        b = b/x
+                        reducida = true
+                else
+                        x = x - 1
+                end
+        end
+
+                @n = a
+                @d = b
+                self.to_s
+        end
+
+        def to_s
+                &quot;#{@n}/#{@d}&quot;
+        end
+
+        def to_f
+                (n.to_f/d.to_f)
+        end
+
+        def ==(fr2)
+                return @n = fr2.n &amp;&amp; @d = fr2.d if fr2.instance_of? Fraccion
+                false
+        end
+
+        def abs
+                a = @n
+                b = @d
+
+                if a &lt; 0
+                        a = a * -1
+                end
+
+                if b &lt; 0
+                        b = b * -1
+                end
+
+                @n = a
+                @d = b
+        end
+
+        def reciprocal
+                Fraccion.new(@d, @n)
+        end
+
+        def -@
+                Fraccion.new(-@n, -@d)
+        end
+
+        def +(fr2)
+          if fr2.is_a? Integer
+
+            fr2 = Fraccion.new(fr3, 1)
+          end
+                d = @d * fr2.d
+                Fraccion.new(((d/@d) * @n) + ((d/fr2.d) * fr2.n), d).reduce
+        end
+
+        def -(fr2)
+                d = @d * fr2.d
+                Fraccion.new(((d/@d) * @n) - ((d/fr2.d) * fr2.n), d).reduce
+        end
+
+        def *(fr2)
+                Fraccion.new(@n * fr2.n, @d * fr2.d).reduce
+        end
+        def coerce(fr2)
+          [Fraccion.new(fr2, 1), self]
+        end
+
+        def /(fr2)
+                Fraccion.new(@n * fr2.d, @d * fr2.n).reduce
+        end
+
+        def %(fr2)
+                Fraccion.new(@n % @d, fr2.n % fr2.d).reduce
+        end
+</pre>
+<p>
+end
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

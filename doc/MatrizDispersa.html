@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: MatrizDispersa</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./Practica11/lib/matriz_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="Practica11/lib/matriz.rb">Practica11/lib/matriz.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Matriz.html">Matriz</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000015">::new</a></li>
+					
+					<li><a href="#M000021">#*</a></li>
+					
+					<li><a href="#M000019">#+</a></li>
+					
+					<li><a href="#M000020">#-</a></li>
+					
+					<li><a href="#M000017">#max</a></li>
+					
+					<li><a href="#M000018">#min</a></li>
+					
+					<li><a href="#M000016">#pos</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./Practica11/Gemfile.html">Gemfile</a></li>
+				
+					<li class="file"><a href="./Practica11/Gemfile_lock.html">Gemfile.lock</a></li>
+				
+					<li class="file"><a href="./Practica11/Guardfile.html">Guardfile</a></li>
+				
+					<li class="file"><a href="./Practica11/LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="./Practica11/README_md.html">README.md</a></li>
+				
+					<li class="file"><a href="./Practica11/Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="./Practica11/Rakefile~.html">Rakefile~</a></li>
+				
+					<li class="file"><a href="./Practica11/lib/fraccion_rb~.html">fraccion.rb~</a></li>
+				
+					<li class="file"><a href="./Practica11/lib/matriz_rb~.html">matriz.rb~</a></li>
+				
+					<li class="file"><a href="./Practica11/lib/matriz/version_rb~.html">version.rb~</a></li>
+				
+					<li class="file"><a href="./Practica11/matriz_gemspec.html">matriz.gemspec</a></li>
+				
+					<li class="file"><a href="./Practica11/spec/rspec_p8_spec_rb~.html">rspec_p8_spec.rb~</a></li>
+				
+					<li class="file"><a href="./Practica11/test/test_matrices_rb~.html">test_matrices.rb~</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Fraccion.html">Fraccion</a></li>
+				
+					<li><a href="./Matriz.html">Matriz</a></li>
+				
+					<li><a href="./MatrizDensa.html">MatrizDensa</a></li>
+				
+					<li><a href="./MatrizDispersa.html">MatrizDispersa</a></li>
+				
+					<li><a href="./Test_Matriz.html">Test_Matriz</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">MatrizDispersa</h1>
+
+		<div id="description">
+			<p>
+Definición e implementación de la clase <a
+href="MatrizDispersa.html">MatrizDispersa</a> <a
+href="MatrizDispersa.html">MatrizDispersa</a> hereda de <a
+href="Matriz.html">Matriz</a>
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="arrayi-attribute-method" class="method-detail">
+				<a name="arrayi"></a>
+				
+				<a name="arrayi="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">arrayi</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="arrayj-attribute-method" class="method-detail">
+				<a name="arrayj"></a>
+				
+				<a name="arrayj="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">arrayj</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+			<div id="valores-attribute-method" class="method-detail">
+				<a name="valores"></a>
+				
+				<a name="valores="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">valores</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p class="missing-docs">(Not documented)</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000015"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(i, j, v)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Dentro del método initialize creamos tres vectores, el vector arrayi
+contendrá las posiciones de i, arrayj las posiciones de j y valores
+contendrá
+</p>
+<pre>
+ los valores no nulos que contenga la matriz.
+</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 194</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>, <span class="ruby-identifier">v</span>)
+    
+    <span class="ruby-ivar">@arrayi</span> = <span class="ruby-identifier">i</span>
+    <span class="ruby-ivar">@arrayj</span> = <span class="ruby-identifier">j</span>
+    <span class="ruby-ivar">@valores</span> = <span class="ruby-identifier">v</span>
+
+  <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000021"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">*</span><span
+						class="method-args">(m2)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Multiplicacion de dos matrices dispersa*dispersa
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 316</span>
+ <span class="ruby-keyword kw">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">m2</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@arrayi</span>, <span class="ruby-ivar">@arrayj</span>, <span class="ruby-ivar">@valores</span>)
+    
+      (<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+        (<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment cmt">#for j in (0...m2.arrayi.size)</span>
+        
+        <span class="ruby-comment cmt">#for k in (0...m2.arrayi.size)</span>
+          <span class="ruby-keyword kw">if</span>((<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">j</span>]) <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">k</span>])
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">j</span>]
+          <span class="ruby-keyword kw">end</span>
+   
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000019"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">+</span><span
+						class="method-args">(m2)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Suma de matrices, bien pueden ser dispersa-dispersa o dispersa-densa
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 233</span>
+ <span class="ruby-keyword kw">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">m2</span>)
+   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">MatrizDensa</span>
+     <span class="ruby-identifier">result</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">densa</span>(<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">m</span>)
+     
+         (<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">t</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+           (<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">t</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> 
+          <span class="ruby-identifier">encontrado</span> = <span class="ruby-value">0</span>
+              (<span class="ruby-ivar">@arrayi</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+              <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">==</span><span class="ruby-ivar">@arrayi</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">j</span><span class="ruby-operator">==</span><span class="ruby-ivar">@arrayj</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">encontrado</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>)
+                <span class="ruby-identifier">result</span>.<span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = (<span class="ruby-identifier">result</span>.<span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">k</span>])
+                <span class="ruby-identifier">encontrado</span> = <span class="ruby-value">1</span>        
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+         <span class="ruby-keyword kw">end</span>
+      
+     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+   <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@arrayi</span>, <span class="ruby-ivar">@arrayj</span>, <span class="ruby-ivar">@valores</span>)
+    
+      (<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">encontrado</span> = <span class="ruby-keyword kw">false</span>
+        (<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">if</span>((<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">j</span>]) <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">k</span>])
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">j</span>]
+            <span class="ruby-identifier">encontrado</span> = <span class="ruby-keyword kw">true</span>
+          <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-keyword kw">end</span>
+        
+          <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">encontrado</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>)
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayi</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">j</span>]
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayj</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">j</span>]
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">j</span>]
+          <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>                                     
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+   <span class="ruby-keyword kw">end</span>
+      
+ <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="M000020"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">-</span><span
+						class="method-args">(m2)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Resta de dos matrices
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 275</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">m2</span>)
+   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">MatrizDensa</span>
+     <span class="ruby-identifier">result</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">densa</span>(<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">m</span>)
+     
+     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">m2</span>.<span class="ruby-identifier">t</span>)
+        <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword kw">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">m2</span>.<span class="ruby-identifier">t</span>)
+          <span class="ruby-identifier">encontrado</span> = <span class="ruby-value">0</span>
+            <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword kw">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@arrayi</span>.<span class="ruby-identifier">size</span>)
+              <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">==</span><span class="ruby-ivar">@arrayi</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">j</span><span class="ruby-operator">==</span><span class="ruby-ivar">@arrayj</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">encontrado</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>)
+                <span class="ruby-identifier">result</span>.<span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = (<span class="ruby-identifier">result</span>.<span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">k</span>])
+                <span class="ruby-identifier">encontrado</span> = <span class="ruby-value">1</span>        
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+         <span class="ruby-keyword kw">end</span>
+      
+     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+   <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@arrayi</span>, <span class="ruby-ivar">@arrayj</span>, <span class="ruby-ivar">@valores</span>)
+    
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword kw">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>.<span class="ruby-identifier">size</span>)
+        <span class="ruby-identifier">encontrado</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword kw">in</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>.<span class="ruby-identifier">size</span>)
+          <span class="ruby-keyword kw">if</span>((<span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">j</span>]) <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">k</span>])
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">j</span>]
+            <span class="ruby-identifier">encontrado</span> = <span class="ruby-keyword kw">true</span>
+          <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-keyword kw">end</span>
+        
+          <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">encontrado</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>)
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayi</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayi</span>[<span class="ruby-identifier">j</span>]
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">arrayj</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">arrayj</span>[<span class="ruby-identifier">j</span>]
+            <span class="ruby-identifier">result</span>.<span class="ruby-identifier">valores</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m2</span>.<span class="ruby-identifier">valores</span>[<span class="ruby-identifier">j</span>]
+          <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>                                     
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+   <span class="ruby-keyword kw">end</span>
+ <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="max-method" class="method-detail ">
+				<a name="M000017"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">max</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Método max para devolver el mayor elemento de la matriz
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="max-source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 211</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max</span>
+    <span class="ruby-identifier">elemenmax</span> = <span class="ruby-ivar">@valores</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@arrayi</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">elemenmax</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">i</span>])
+         <span class="ruby-identifier">elemenmax</span> = <span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">i</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">elemenmax</span>
+  <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="min-method" class="method-detail ">
+				<a name="M000018"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">min</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Método min que devuelve el menor elemento de la matriz
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="min-source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 222</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min</span>
+     <span class="ruby-identifier">elemenmin</span> = <span class="ruby-ivar">@valores</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@arrayi</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">elemenmin</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">i</span>])
+         <span class="ruby-identifier">elemenmin</span> = <span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">i</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">elemenmin</span>
+  <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="pos-method" class="method-detail ">
+				<a name="M000016"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">pos</span><span
+						class="method-args">(a,b)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+El método pos nos permite acceder al valor de una posición determinada
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="pos-source">
+<pre>
+<span class="ruby-comment cmt"># File Practica11/lib/matriz.rb, line 202</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pos</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@arrayi</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword kw">if</span>((<span class="ruby-ivar">@arrayi</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">a</span>) <span class="ruby-keyword kw">and</span> (<span class="ruby-ivar">@arrayj</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>))
+        <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@valores</span>[<span class="ruby-identifier">i</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+  <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

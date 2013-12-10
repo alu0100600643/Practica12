@@ -1,0 +1,313 @@
+#require "matriz/version"
+
+
+class Matriz
+
+	attr_accessor :m, :t
+	
+
+	def initialize(matriz)
+	    if matriz != nil
+      	
+		@t = matriz.size-1
+	   end 
+	   @m = matriz
+		
+	end
+	def get_t
+	     return @t
+	end
+	
+	def + (other)
+	
+	end
+	
+	def - (other)
+	  
+	end
+	
+	def * (other)
+	 
+	end
+	
+	def pos(a, b)
+	  
+	end
+	
+	def to_s
+	 
+	end
+
+	
+end
+
+
+
+class MatrizDensa < Matriz
+
+  private_class_method :new
+  
+  def Matriz.densa (matriz)
+	new(matriz)
+    
+  end
+  
+  def max
+    elemenmax = @m[0][0]
+    for i in 0..@t
+      for j in 0..@t
+	if(elemenmax < @m[i][j])
+	  elemenmax = @m[i][j]
+	end
+      end
+    end
+    return elemenmax
+  end
+  
+  def min
+    elemenmin = @m[0][0]
+    for i in 0..@t
+      for j in 0..@t
+	if(elemenmin > @m[i][j])
+	  elemenmin = @m[i][j]
+	end
+      end
+    end
+    return elemenmin
+    
+  end
+  
+  def +(m2)
+ 
+    if m2.instance_of?MatrizDispersa
+     result = MatrizDensa.densa(@m)
+      
+     # for i in (0..@t)
+	 #  for j in (0..@t)
+     
+	 (@t+1).times do |i|
+	   (@t+1).times do |j|  
+	    encontrado = 0
+	    (m2.arrayi.size+1).times do |k|
+	      if (i==m2.arrayi[k] and j==m2.arrayj[k] and encontrado==0)
+		result.m[i][j] = (result.m[i][j]) + (m2.valores[k])
+                encontrado = 1        
+              end
+            end
+           
+           end
+       end
+     else
+        result = MatrizDensa.densa(m2.m)
+	 (@t+1).times do |i|
+	   (@t+1).times do |j|
+		result.m[i][j] = @m[i][j] + result.m[i][j]
+	    end
+	  end
+      end
+      
+      return result
+ end          
+		
+		
+		
+	
+  def -(m2)
+
+    if m2.instance_of?MatrizDispersa
+      result = MatrizDensa.densa(@m)
+
+      for i in (0..@t)
+	  for j in (0..@t)
+	    encontrado = 0
+            for k in (0...m2.arrayi.size)
+	      if (i==m2.arrayi[k] and j==m2.arrayj[k] and encontrado==0)
+		result.m[i][j] = (result.m[i][j]) - (m2.valores[k])
+                encontrado = 1        
+              end
+            end
+           
+           end
+         end
+      else
+        result = MatrizDensa.densa(m2.m)
+
+	for i in 0..@t do
+			for j in 0..@t do
+				result.m[i][j] = @m[i][j] - result.m[i][j] 
+			end
+		end
+      end
+      
+      return result
+ end
+ 
+	def *(m2)
+   	 
+   	 mat = Array.new(@t+1){Array.new(@t+1)}
+   	 
+   	 for i in (0..@t)
+   		 for j in (0..@t)
+   			 mat[i][j]=0;
+   		 end
+    	end
+
+   	 
+    	m_resultado = Matriz.new(mat)
+   	 
+    	for i in 0..@t
+        	for j in 0..@t
+		  for k in 0..@t
+                	m_resultado.m[i][j] += @m[i][k] * m2.m[k][j]
+            	end
+           	 
+        	end
+    	end
+	  return m_resultado
+	end
+
+
+	def pos(a, b)
+	 
+	   @m[a][b]
+	   
+	end
+	
+	def to_s
+	  "#{@mat}"
+	end
+
+ 
+ end
+
+
+class MatrizDispersa < Matriz
+  attr_accessor :arrayi, :arrayj , :valores
+  
+  def initialize(i, j, v)
+    
+    @arrayi = i
+    @arrayj = j
+    @valores = v
+
+  end
+   
+  def pos(a,b)
+    for i in 0...@arrayi.size
+      if((@arrayi[i] == a) and (@arrayj[i] == b))
+	return @valores[i]
+      end
+    end
+    return nil
+  end
+  
+  def max
+    elemenmax = @valores[0]
+    for i in 0...@arrayi.size
+      if(elemenmax < @valores[i])
+         elemenmax = @valores[i]
+      end
+    end
+    return elemenmax
+  end
+  
+  
+  def min
+     elemenmin = @valores[0]
+    for i in 0...@arrayi.size
+      if(elemenmin > @valores[i])
+         elemenmin = @valores[i]
+      end
+    end
+    return elemenmin
+  end
+  
+  
+ def +(m2)
+   if m2.instance_of?MatrizDensa
+     result = MatrizDensa.densa(m2.m)
+     
+     #for i in (0..m2.t)
+	#for j in (0..m2.t)
+	 (m2.t+1).times do |i|
+	   (m2.t+1).times do |j| 
+	  encontrado = 0
+	      (@arrayi.size).times do |k|
+	      if (i==@arrayi[k] and j==@arrayj[k] and encontrado==0)
+		result.m[i][j] = (result.m[i][j]) + (@valores[k])
+                encontrado = 1        
+	      end
+            end
+         end
+      
+     end
+     return result
+   else
+      result = MatrizDispersa.new(@arrayi, @arrayj, @valores)
+    
+      (m2.arrayi.size+1).times do |j|
+      #for j in (0...m2.arrayi.size)
+	encontrado = false
+	(m2.arrayi.size+1).times do |k|
+	#for k in (0...m2.arrayi.size)
+	  if((m2.arrayi[j]) == result.arrayi[k] and m2.arrayj[j] == result.arrayj[k])
+	    result.valores[k] = result.valores[k] + m2.valores[j]
+	    encontrado = true
+	  end
+	
+	end
+	
+	  if(encontrado == false)
+	    result.arrayi << m2.arrayi[j]
+	    result.arrayj << m2.arrayj[j]
+	    result.valores << m2.valores[j]
+	  end
+      end	                              
+      return result
+   end
+      
+ end
+
+    def -(m2)
+   if m2.instance_of?MatrizDensa
+     result = MatrizDensa.densa(m2.m)
+     
+     for i in (0..m2.t)
+	for j in (0..m2.t)
+	  encontrado = 0
+	    for k in (0...@arrayi.size)
+	      if (i==@arrayi[k] and j==@arrayj[k] and encontrado==0)
+		result.m[i][j] = (result.m[i][j]) - (@valores[k])
+                encontrado = 1        
+	      end
+            end
+         end
+      
+     end
+     return result
+   else
+      result = MatrizDispersa.new(@arrayi, @arrayj, @valores)
+    
+      for j in (0...m2.arrayi.size)
+	encontrado = false
+	for k in (0...m2.arrayi.size)
+	  if((m2.arrayi[j]) == result.arrayi[k] and m2.arrayj[j] == result.arrayj[k])
+	    result.valores[k] = result.valores[k] - m2.valores[j]
+	    encontrado = true
+	  end
+	
+	end
+	
+	  if(encontrado == false)
+	    result.arrayi << m2.arrayi[j]
+	    result.arrayj << m2.arrayj[j]
+	    result.valores << m2.valores[j]
+	  end
+      end	                              
+      return result
+   end
+ end
+   
+   
+end
+

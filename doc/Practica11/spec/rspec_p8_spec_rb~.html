@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: rspec_p8_spec.rb~ [RDoc Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../Practica11/Gemfile.html">Gemfile</a></li>
+				
+					<li class="file"><a href="../../Practica11/Gemfile_lock.html">Gemfile.lock</a></li>
+				
+					<li class="file"><a href="../../Practica11/Guardfile.html">Guardfile</a></li>
+				
+					<li class="file"><a href="../../Practica11/LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../../Practica11/README_md.html">README.md</a></li>
+				
+					<li class="file"><a href="../../Practica11/Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../../Practica11/Rakefile~.html">Rakefile~</a></li>
+				
+					<li class="file"><a href="../../Practica11/lib/fraccion_rb~.html">fraccion.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/lib/matriz_rb~.html">matriz.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/lib/matriz/version_rb~.html">version.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/matriz_gemspec.html">matriz.gemspec</a></li>
+				
+					<li class="file"><a href="../../Practica11/spec/rspec_p8_spec_rb~.html">rspec_p8_spec.rb~</a></li>
+				
+					<li class="file"><a href="../../Practica11/test/test_matrices_rb~.html">test_matrices.rb~</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Fraccion.html">Fraccion</a></li>
+				
+					<li><a href="../../Matriz.html">Matriz</a></li>
+				
+					<li><a href="../../MatrizDensa.html">MatrizDensa</a></li>
+				
+					<li><a href="../../MatrizDispersa.html">MatrizDispersa</a></li>
+				
+					<li><a href="../../Test_Matriz.html">Test_Matriz</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<p>
+Realizado por Daura Hernández Díaz y Miguel Aurelio García González
+</p>
+<p>
+require &#8220;matriz.rb&#8220; require &#8220;fraccion.rb&#8220;
+</p>
+<p>
+describe <a href="../../MatrizDensa.html">MatrizDensa</a> do
+</p>
+<pre>
+        before :each do
+                @matriz = MatrizDensa.densa([[8, 16], [21, 34]])
+                @matriz2 = MatrizDensa.densa([[1, 2], [3, 4]])
+                @m1 = MatrizDensa.densa([[Fraccion.new(1, 2), Fraccion.new(3, 4)], [Fraccion.new(3, 4), Fraccion.new(1, 2)]])
+                @m2 = MatrizDensa.densa([[Fraccion.new(5, 6), Fraccion.new(7, 8)], [Fraccion.new(7, 8), Fraccion.new(5, 6)]])
+
+        end
+
+        it &quot; Primer elemento de la matriz &quot; do
+          @matriz.pos(0, 0).should == 8
+        end
+
+        it &quot; Segundo elemento de la matriz &quot; do
+          @matriz.pos(0, 1).should == 16
+        end
+
+        it &quot; Tercer elemento de la matriz &quot; do
+          @matriz.pos(1, 0).should == 21
+        end
+
+        it &quot; Cuarto elemento de la matriz &quot; do
+          @matriz.pos(1, 1).should == 34
+        end
+
+        it &quot;Suma &quot; do
+          ((@matriz + @matriz2).m).should == [[9, 18], [24, 38]]
+        end
+
+        it &quot;Resta &quot; do
+          ((@matriz - @matriz2).m).should == [[7, 14], [18, 30]]
+        end
+
+        it &quot;Multiplicacion&quot; do
+          ((@matriz * @matriz2).m).should == [[56, 80], [123, 178]]
+        end
+
+        it &quot;Fraccion&quot; do
+          ((@m1 + @m2).m).should == [[&quot;4/3&quot;, &quot;13/8&quot;], [&quot;13/8&quot;, &quot;4/3&quot;]]
+        end
+
+        it &quot;Fraccion&quot; do
+          ((@m1 + @m2).m).should == [[&quot;4/3&quot;, &quot;13/8&quot;], [&quot;13/8&quot;, &quot;4/3&quot;]]
+        end
+
+        it &quot;Elemento maximo&quot; do
+          @matriz.max.should == 34
+        end
+
+        it &quot;Elemento minimo&quot; do
+          @matriz.min.should == 8
+        end
+</pre>
+<p>
+end
+</p>
+<p>
+describe <a href="../../MatrizDispersa.html">MatrizDispersa</a> do
+</p>
+<pre>
+  before :each do
+
+    @m3 = MatrizDispersa.new([1, 2,3], [1, 2, 3], [1, 2, 3])
+    @m4 = MatrizDispersa.new([1, 2,3], [1, 2, 3], [1, 2, 3])
+  end
+
+    it &quot;Primer elemento de la matriz&quot; do
+      (@m3.pos(1, 1)).should == 1
+    end
+
+    it &quot;Segundo elemento&quot; do
+      (@m3.pos(2, 2)).should == 2
+    end
+
+    it &quot;Suma de matrices&quot; do
+      (@m3 + @m4).valores.should == [2, 4, 6]
+    end
+
+    it &quot;Resta de matrices&quot; do
+      (@m3 - @m4).valores.should == [0, 0, 0]
+    end
+
+    it &quot;Valor maximo&quot; do
+      @m3.max.should == 3
+    end
+
+    it &quot;Valor minimo&quot; do
+      @m3.min.should == 1
+    end
+
+    it &quot;Multiplicacion&quot; do
+      (@m4 * @m4).valores.should = [1, 4, 9]
+    end
+</pre>
+<p>
+end
+</p>
+<p>
+describe <a href="../../MatrizDensa.html">MatrizDensa</a> do
+</p>
+<pre>
+  before :each do
+
+    @m3 = MatrizDispersa.new([0, 1], [0, 1], [1, 2])
+    @m4 = MatrizDispersa.new([0, 1], [0, 1], [1, 2])
+    @matriz = MatrizDensa.densa([[8, 16], [21, 34]])
+    @matriz2 = MatrizDensa.densa([[1, 2], [3, 4]])
+    @m1 = MatrizDensa.densa([[Fraccion.new(1, 2), Fraccion.new(3, 4)], [Fraccion.new(3, 4), Fraccion.new(1, 2)]])
+    @m2 = MatrizDensa.densa([[Fraccion.new(5, 6), Fraccion.new(7, 8)], [Fraccion.new(7, 8), Fraccion.new(5, 6)]])
+    @matden = MatrizDensa.densa([[Fraccion.new(1, 2), 4], [5, 6]])
+    @matdis = MatrizDispersa.new([1], [1], [Fraccion.new(1, 2)])
+
+  end
+
+    it &quot;Suma de dispersa con densa&quot; do
+      ((@m3 + @matriz).m).should == [[9,16], [21, 36]]
+    end
+
+    it &quot;Suma de Densa y dispersa&quot; do
+      ((@matriz + @m3).m).should == [[9,16], [21, 36]]
+    end
+
+    it &quot;Suma con fracciones&quot; do
+        ((@matden + @matdis).m).should == [[Fraccion.new(2,2), 4], [5, &quot;13/2&quot;]]
+    end
+</pre>
+<p>
+end
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

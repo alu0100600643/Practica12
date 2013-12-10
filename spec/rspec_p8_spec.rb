@@ -1,0 +1,132 @@
+#Realizado por Daura Hernández Díaz y Miguel Aurelio García González
+
+require "matriz.rb"
+require "fraccion.rb"
+
+
+describe MatrizDensa do
+
+	before :each do
+		@matriz = MatrizDensa.densa([[8, 16], [21, 34]])
+		@matriz2 = MatrizDensa.densa([[1, 2], [3, 4]])
+		@m1 = MatrizDensa.densa([[Fraccion.new(1, 2), Fraccion.new(3, 4)], [Fraccion.new(3, 4), Fraccion.new(1, 2)]])
+		@m2 = MatrizDensa.densa([[Fraccion.new(5, 6), Fraccion.new(7, 8)], [Fraccion.new(7, 8), Fraccion.new(5, 6)]])
+
+	end
+
+ 
+  
+	it " Primer elemento de la matriz " do
+	  @matriz.pos(0, 0).should == 8
+	end
+ 	
+	it " Segundo elemento de la matriz " do
+	  @matriz.pos(0, 1).should == 16
+	end
+	
+	it " Tercer elemento de la matriz " do
+	  @matriz.pos(1, 0).should == 21
+	end
+	
+	it " Cuarto elemento de la matriz " do
+	  @matriz.pos(1, 1).should == 34
+	end
+
+	
+	it "Suma " do
+	  ((@matriz + @matriz2).m).should == [[9, 18], [24, 38]]
+	end
+	
+	it "Resta " do
+	  ((@matriz - @matriz2).m).should == [[7, 14], [18, 30]]
+	end
+	
+	it "Multiplicacion" do
+	  ((@matriz * @matriz2).m).should == [[56, 80], [123, 178]]
+	end
+	
+	it "Fraccion" do
+	  ((@m1 + @m2).m).should == [["4/3", "13/8"], ["13/8", "4/3"]]
+	end
+
+	it "Fraccion" do
+	  ((@m1 + @m2).m).should == [["4/3", "13/8"], ["13/8", "4/3"]]
+	end
+	
+	it "Elemento maximo" do
+	  @matriz.max.should == 34
+	end
+	
+	it "Elemento minimo" do
+	  @matriz.min.should == 8
+	end
+end
+
+describe MatrizDispersa do
+
+  before :each do
+   
+    @m3 = MatrizDispersa.new([1, 2,3], [1, 2, 3], [1, 2, 3])
+    @m4 = MatrizDispersa.new([1, 2,3], [1, 2, 3], [1, 2, 3])
+  end
+  
+
+    it "Primer elemento de la matriz" do
+      (@m3.pos(1, 1)).should == 1
+    end
+    
+    it "Segundo elemento" do
+      (@m3.pos(2, 2)).should == 2
+    end
+    
+    it "Suma de matrices" do
+      (@m3 + @m4).valores.should == [2, 4, 6]
+    end
+
+    it "Resta de matrices" do
+      (@m3 - @m4).valores.should == [0, 0, 0]
+    end
+    
+    it "Valor maximo" do
+      @m3.max.should == 3
+    end
+    
+    it "Valor minimo" do
+      @m3.min.should == 1
+    end
+
+    it "Multiplicacion" do
+      (@m3 * @m4).valores.should == [1, 4, 9]
+    end
+
+end
+
+describe MatrizDensa do
+
+  before :each do
+   
+    @m3 = MatrizDispersa.new([0, 1], [0, 1], [1, 2])
+    @m4 = MatrizDispersa.new([0, 1], [0, 1], [1, 2])
+    @matriz = MatrizDensa.densa([[8, 16], [21, 34]])
+    @matriz2 = MatrizDensa.densa([[1, 2], [3, 4]])
+    @m1 = MatrizDensa.densa([[Fraccion.new(1, 2), Fraccion.new(3, 4)], [Fraccion.new(3, 4), Fraccion.new(1, 2)]])
+    @m2 = MatrizDensa.densa([[Fraccion.new(5, 6), Fraccion.new(7, 8)], [Fraccion.new(7, 8), Fraccion.new(5, 6)]])
+    @matden = MatrizDensa.densa([[Fraccion.new(1, 2), 4], [5, 6]])
+    @matdis = MatrizDispersa.new([1], [1], [Fraccion.new(1, 2)])
+
+  end
+  
+
+    it "Suma de dispersa con densa" do
+      ((@m3 + @matriz).m).should == [[9,16], [21, 36]]
+    end
+    
+    it "Suma de Densa y dispersa" do
+      ((@matriz + @m3).m).should == [[9,16], [21, 36]]
+    end    
+    
+    it "Suma con fracciones" do
+	((@matden + @matdis).m).should == [[Fraccion.new(2,2), 4], [5, "13/2"]]
+    end
+   
+end
