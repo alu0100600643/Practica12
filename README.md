@@ -1,8 +1,11 @@
-#Practica realizada por Miguel Aurelio García González y Daura Hernández Díaz
+#Practica realizada por Daura Hernández Díaz y Miguel Aurelio García González
 
-Practica11
+Practica12
 ==========
 
-RDOC
+Enlace gemnasium
+https://gemnasium.com/alu0100600643/Practica12
 
-En esta práctica se nos pedía implementar con programación funcional utilizando alguno de los diferentes métodos expuestos en el enunciado de la práctica, nosotros hemos utilizado el método "times". También se nos pedía documentar la gema con RDOC y hemos utilizado el comando correspondiente.
+DSL 
+ En esta practica hemos intentado aproximarnos mas al lenguaje natural que todos utilizamos a la hora de realizar operaciones con matrices, facilitando así el uso del programa a personas que no tengan conocimientos de programación o que tengan muy pocos.
+ 
